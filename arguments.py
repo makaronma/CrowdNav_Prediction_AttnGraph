@@ -208,9 +208,10 @@ def get_args():
 
     args = parser.parse_args()
 
-    args.gpu = not args.no_gpu and (
-        torch.cuda.is_available() or torch.backends.mps.is_available()
-    )
+    args.gpu = True
+    # not args.no_gpu and (
+    #     torch.cuda.is_available() or torch.backends.mps.is_available()
+    # )
 
     assert args.algo in ['a2c', 'ppo', 'acktr']
     if args.recurrent_policy:

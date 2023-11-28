@@ -408,12 +408,12 @@ class SRNN(nn.Module):
         masks = reshapeT(masks, seq_length, nenv)
 
         
-        if self.args.no_gpu:
-            all_hidden_states_edge_RNNs = Variable(
-                torch.zeros(1, nenv, self.human_num + 1, rnn_hxs['human_human_edge_rnn'].size()[-1]).to("cpu"))
-        else:
-            all_hidden_states_edge_RNNs = Variable(
-                torch.zeros(1, nenv, self.human_num + 1, rnn_hxs['human_human_edge_rnn'].size()[-1]).to(utils.get_device()))
+        # if self.args.no_gpu:
+        #     all_hidden_states_edge_RNNs = Variable(
+        #         torch.zeros(1, nenv, self.human_num + 1, rnn_hxs['human_human_edge_rnn'].size()[-1]).to("cpu"))
+        # else:
+        all_hidden_states_edge_RNNs = Variable(
+            torch.zeros(1, nenv, self.human_num + 1, rnn_hxs['human_human_edge_rnn'].size()[-1]).to(utils.get_device()))
 
 
         # Do forward pass through temporaledgeRNN
