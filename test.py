@@ -88,15 +88,15 @@ def main():
 
 	utils.seed_everything(algo_args.seed)
  
-	if algo_args.gpu:
-		if algo_args.cuda_deterministic:
-			# reproducible but slower
-			torch.backends.cudnn.benchmark = False
-			torch.backends.cudnn.deterministic = True
-		else:
-			# not reproducible but faster
-			torch.backends.cudnn.benchmark = True
-			torch.backends.cudnn.deterministic = False
+	# if algo_args.gpu:
+	# 	if algo_args.cuda_deterministic:
+	# 		# reproducible but slower
+	# 		torch.backends.cudnn.benchmark = False
+	# 		torch.backends.cudnn.deterministic = True
+		# else:
+	# not reproducible but faster
+	torch.backends.cudnn.benchmark = True
+	torch.backends.cudnn.deterministic = False
 
 
 	torch.set_num_threads(1)
