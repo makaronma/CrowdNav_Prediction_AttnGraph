@@ -1,4 +1,4 @@
-gym
+gym=0.15.7
 matplotlib
 numpy
 pandas
